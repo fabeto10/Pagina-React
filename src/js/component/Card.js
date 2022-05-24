@@ -1,15 +1,32 @@
+import PropTypes from "prop-types";
 import React from 'react';
 
-export const Card = () => {
-    return(
-        <div className="card-group">
-            <div className="card">
-                <img src="..." className="card-img-top" alt="..."/>
-                <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-            </div>
-        </div>
-    )
-}
+const numbers = [1, 2, 3, 4];
+
+export const Cards = ({ ...props }) => {
+	return (
+		<div className="card-group">
+			{numbers.map((number, index) => {
+				return (
+					<div key={index} className="card">
+						<img
+							className="card-img-top"
+							src={props.imgUrl}
+							alt="Card image cap"
+						/>
+						<div className="card-body">
+							<h5 className="card-title">{props.title+number}</h5>
+							<p className="card-text">{props.description}</p>
+						</div>
+					</div>
+				);
+			})}
+		</div>
+	);
+};
+
+Cards.propTypes = {
+	imgUrl: PropTypes.string,
+	description: PropTypes.string,
+	title: PropTypes.string,
+};
