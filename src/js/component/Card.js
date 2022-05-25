@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React from 'react';
+import React from "react";
 
 const numbers = [1, 2, 3, 4];
 
@@ -15,7 +15,9 @@ export const Cards = ({ ...props }) => {
 							alt="Card image cap"
 						/>
 						<div className="card-body">
-							<h5 className="card-title">{props.title+number}</h5>
+							<h5 className="card-title">
+								{props.title + number}
+							</h5>
 							<p className="card-text">{props.description}</p>
 						</div>
 					</div>
